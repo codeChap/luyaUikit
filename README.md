@@ -2,7 +2,7 @@
   <img src="https://raw.githubusercontent.com/luyadev/luya/master/docs/logo/luya-logo-0.2x.png" alt="LUYA Logo"/>
 </p>
 
-# LUYA *VENDOR/NAME* module/extension
+# LUYA *codechap/uikit* module/extension
 
 [![LUYA](https://img.shields.io/badge/Powered%20by-LUYA-brightgreen.svg)](https://luya.io)
 
@@ -13,7 +13,7 @@
 Install the extension through composer:
 
 ```sh
-composer require VENDOR/NAME
+composer require codechap/uikit
 ```
 
 Run the import command afterwards:

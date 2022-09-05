@@ -1,8 +1,8 @@
 {
-	"name" : "VENDOR/NAME",
+	"name" : "codechap/uikit",
 	"description" : "",
 	"type" : "luya-extension",
-	"keywords" : ["luya"],
+	"keywords" : ["luya", "uikit"],
 	"license": "MIT",
 	"authors" : [
 		{
@@ -15,12 +15,12 @@
 	},
 	"autoload" : {
 		"psr-4" : {
-			"VENDOR\\NAME\\" : "src/"
+			"codechap\\uikit\\" : "src/"
 		}
 	},
 	"autoload-dev" : {
        "psr-4" : {
-           "VENDOR\\NAME\\tests\\" : "tests/"
+           "codechap\\uikit\\tests\\" : "tests/"
        }
     },
     "config": {

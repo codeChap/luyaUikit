@@ -1,1 +1,35 @@
-IMAGE HERE
+<?php
+/**
+ * View file for block: ImageBlock
+ *
+ * @param $this->extraValue('image');
+ * @param $this->varValue('align');
+ * @param $this->varValue('showCaption');
+ * @param $this->varValue('image');
+ * @param $this->cfgValue('lazyload');
+ *
+ * @var $this \luya\cms\base\PhpBlockView
+ */
+
+$align   = $this->varValue('align', 'left');
+$image   = $this->extraValue('image', false);
+$caption = ($image AND !empty($image->caption)) ? $image->caption : '';
+
+?>
+
+<?php if ($image) : ?>
+    <figure class="<?php if ($align === 'left'): ?>uk-text-left<?php elseif ($align === 'right'): ?>uk-text-right<?php else: ?>uk-text-center<?php endif; ?>">
+
+        <!-- Image -->
+        <?php if($this->cfgValue('lazyload', false)): ?>
+        <img data-src="<?= $image->source ?>"<?php if (!empty($caption)): ?> alt="<?= $caption ?>"<?php endif; ?> uk-img>
+        <?php else: ?>
+        <img src="<?= $image->source ?>"<?php if (!empty($caption)): ?> alt="<?= $caption ?>"<?php endif; ?> uk-img>
+        <?php endif; ?>
+
+        <!-- Caption -->
+        <?php if ($this->varValue('showCaption', false) && !empty($caption)): ?>
+        <figcaption><?= $caption ?></figcaption>
+        <?php endif; ?>
+    </figure>
+<?php endif; ?>

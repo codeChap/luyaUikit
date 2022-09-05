@@ -15,12 +15,12 @@
 	},
 	"autoload" : {
 		"psr-4" : {
-			"codechap\\LuyaUikit\\" : "src/"
+			"codechap\\uikit\\" : "src/"
 		}
 	},
 	"autoload-dev" : {
        "psr-4" : {
-           "codechap\\LuyaUikit\\tests\\" : "tests/"
+           "codechap\\uikit\\tests\\" : "tests/"
        }
     },
     "config": {

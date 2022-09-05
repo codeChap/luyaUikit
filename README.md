@@ -13,7 +13,7 @@
 Install the extension through composer:
 
 ```sh
-composer require codechap/uikit
+composer require codechap/luya-uikit:dev-master
 ```
 
 Run the import command afterwards:

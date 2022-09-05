@@ -28,6 +28,16 @@
             "enabled": false
         }
     },
+	"extra" : {
+		"luya" : {
+			"blocks": [
+				"src/uikit"
+			],
+			"bootstrap": [
+				"codechap\\uikit"
+			]
+		}
+	},
     "repositories": [
         {
             "type": "composer",

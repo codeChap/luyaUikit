@@ -1,43 +1,45 @@
 {
-	"name" : "codechap/luya-uikit",
-	"description" : "",
-	"type" : "luya-extension",
-	"keywords" : ["luya", "uikit"],
-	"license": "MIT",
-	"authors" : [
-		{
-			"name": "codechap",
-			"email": "hello@codechap.com"
-		}
-	],
-	"require-dev" : {
-	    "luyadev/luya-testsuite" : "^2.0"
-	},
-	"autoload" : {
-		"psr-4" : {
-			"codechap\\uikit\\" : "src/"
-		}
-	},
-	"autoload-dev" : {
-       "psr-4" : {
-           "codechap\\uikit\\tests\\" : "tests/"
-       }
+    "name" : "luyadev/luya-uikit",
+    "description" : "Uikit",
+    "type" : "luya-extension",
+    "keywords" : [
+        "php",
+        "luya",
+        "module",
+        "cms",
+        "yii2",
+        "uikit",
+        "assets"
+    ],
+    "license" : "MIT",
+    "homepage" : "https://luya.io",
+    "authors" : [{
+            "name" : "Codechap",
+            "email" : "hello@codechap.com"
+        }
+    ],
+    "autoload" : {
+        "psr-4" : {
+            "luya\\uikit\\" : "src/"
+        }
+    },
+    "autoload-dev" : {
+        "psr-4" : {
+            "luya\\uikit\\tests\\" : "tests/"
+        }
+    },
+    "extra" : {
+        "luya" : {
+            "blocks" : [
+                "src{{DS}}blocks"
+            ]
+        }
     },
     "config": {
         "fxp-asset": {
             "enabled": false
         }
     },
-	"extra" : {
-		"luya" : {
-			"blocks": [
-				"src/uikit"
-			],
-			"bootstrap": [
-				"codechap\\uikit"
-			]
-		}
-	},
     "repositories": [
         {
             "type": "composer",

@@ -6,7 +6,7 @@ use luya\uikit\Module;
 use luya\cms\helpers\BlockHelper;
 use luya\cms\frontend\blockgroups\MediaGroup;
 
-class ImgBlock extends PhpBlock
+class SliderBlock extends PhpBlock
 {
     /**
      * @var string The module where this block belongs to in order to find the view files.
@@ -36,7 +36,7 @@ class ImgBlock extends PhpBlock
      */
     public function name()
     {
-        return 'Image Block';
+        return 'Slider Block';
     }
     
     /**
@@ -75,7 +75,7 @@ class ImgBlock extends PhpBlock
                 ['var' => 'showCaption', 'label' => Module::t('block_image.show_caption'), 'type' => self::TYPE_CHECKBOX],
             ],
             'cfgs' => [
-                ['var' => 'lazyload', 'label' => Module::t('block_image.lazyload'), 'type' => self::TYPE_CHECKBOX]
+
             ]
         ];
     }
@@ -111,7 +111,7 @@ class ImgBlock extends PhpBlock
     public function getFieldHelp()
     {
         return [
-            'content' => 'Image',
+            'content' => 'Image Slider',
         ];
     }
 }

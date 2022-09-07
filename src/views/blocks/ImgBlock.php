@@ -12,6 +12,7 @@
  */
 
 $align   = $this->varValue('align', 'left');
+$width   = $this->varValue('width', '');
 $image   = $this->extraValue('image', false);
 $caption = ($image AND !empty($image->caption)) ? $image->caption : '';
 
@@ -22,9 +23,9 @@ $caption = ($image AND !empty($image->caption)) ? $image->caption : '';
 
         <!-- Image -->
         <?php if($this->cfgValue('lazyload', false)): ?>
-        <img data-src="<?= $image->source ?>"<?php if (!empty($caption)): ?> alt="<?= $caption ?>"<?php endif; ?> uk-img>
+        <img class="<?= $width; ?>" data-src="<?= $image->source ?>"<?php if (!empty($caption)): ?> alt="<?= $caption ?>"<?php endif; ?> uk-img>
         <?php else: ?>
-        <img src="<?= $image->source ?>"<?php if (!empty($caption)): ?> alt="<?= $caption ?>"<?php endif; ?> uk-img>
+        <img class="<?= $width; ?>" src="<?= $image->source ?>"<?php if (!empty($caption)): ?> alt="<?= $caption ?>"<?php endif; ?> uk-img>
         <?php endif; ?>
 
         <!-- Caption -->

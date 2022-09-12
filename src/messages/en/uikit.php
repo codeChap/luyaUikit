@@ -3,11 +3,37 @@
 // EN
 
 return [
+
+    'block_background_image.title'        => 'Title',
+    'block_background_image.subTitle'     => 'Sub Title',
+    'block_background_image.image'        => 'Image',
+    'block_background_image.size'         => 'Size',
+    'block_background_image.position'     => 'Position',
+    'block_background_image.topLeft'      => 'Top Left',
+    'block_background_image.topLeft'      => 'Top Center',
+    'block_background_image.topLeft'      => 'Top Right',
+    'block_background_image.centerLeft'   => 'Center Left',
+    'block_background_image.centerCenter' => 'Center Center',
+    'block_background_image.centerRight'  => 'Center Right',
+    'block_background_image.bottomLeft'   => 'Bottom Left',
+    'block_background_image.bottomCenter' => 'Bottom Center',
+    'block_background_image.bottomRight'  => 'Bottom Right',
+    'block_background_image.cover'        => 'Cover',
+    'block_background_image.contain'      => 'Contain',
+    'block_background_image.100Width'     => '100% Width',
+    'block_background_image.100Height'    => '100% Height',
+    'block_background_image.small'        => 'small',
+    'block_background_image.medium'       => 'medium',
+    'block_background_image.large'        => 'large',
+
+
     'block_file_list.block_name' => 'Files List',
     'block_file_list.files_label' => 'Files',
     'block_file_list.show_type_label' => 'Display file type',
     'block_file_list.show_type_icon' => 'Display file type icon',
     'block_file_list.show_file_size' => 'Display file size',
+
+    
 
     'block_image.block_name' => 'Image',
     'block_image.image' => 'Image',

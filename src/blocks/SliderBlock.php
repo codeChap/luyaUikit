@@ -52,30 +52,27 @@ class SliderBlock extends PhpBlock
      */
     public function config()
     {
-        return [
-            'vars' => [
-                ['var' => 'image', 'label' => Module::t('block_image.image'), 'type' => self::TYPE_IMAGEUPLOAD, 'options' => ['no_filter' => false]],
-                ['var' => 'align', 'label' => Module::t('block_image.align'), 'type' => self::TYPE_SELECT, 'options' => BlockHelper::selectArrayOption(['left' => Module::t('block_image.align_left'), 'center' => Module::t('block_image.align_center'), 'right' => Module::t('block_image.align_right')])],
-                ['var' => 'width', 'label' => 'Width', 'type' => self::TYPE_SELECT, 'options' => BlockHelper::selectArrayOption([
-                    'uk-width-1-1' => '100%',
-                    'uk-width-1-2' => '50%',
-                    'uk-width-1-3' => '1/3',
-                    'uk-width-2-3' => '2/3',
-                    'uk-width-1-4' => '1/4',
-                    'uk-width-2-4' => '2/4',
-                    'uk-width-3-4' => '3/4',
-                    'uk-width-1-5' => '1/5',
-                    'uk-width-2-5' => '2/5',
-                    'uk-width-3-5' => '3/5',
-                    'uk-width-4-5' => '4/5',
-                    'uk-width-1-6' => '1/6',
-                    'uk-width-5-6' => '5/6'
-                    ])
-                ],
-                ['var' => 'showCaption', 'label' => Module::t('block_image.show_caption'), 'type' => self::TYPE_CHECKBOX],
-            ],
-            'cfgs' => [
-
+        return 
+        [
+            'vars' =>
+            [
+                [
+                    'var' => 'photos', 'label' => 'Photos', 'type' => self::TYPE_MULTIPLE_INPUTS, 
+                    'options' =>
+                    [
+                        [
+                            'type'    => self::TYPE_IMAGEUPLOAD,
+                            'var'     => 'image',
+                            'label'   => 'Image',
+                            'options' => ['no_filter' => false]
+                        ],
+                        //[
+                        //'type' => self::TYPE_TEXT,
+                        //'var' => 'name',
+                        //'label' => 'Name'
+                        //]
+                    ]
+                ]
             ]
         ];
     }
@@ -83,11 +80,14 @@ class SliderBlock extends PhpBlock
     /**
      * @inheritDoc
      */
-    public function extraVars()
+    public function extraVars(array $params = array())
     {
-        return [
-            'image' => BlockHelper::imageUpload($this->getVarValue('image'), false, true),
-        ];
+        // Build up photos
+        $photos = [];
+        foreach($this->getVarValue('photos') AS $photo){
+            $photos[] = BlockHelper::imageUpload($photo['image']) ;
+        };
+        return ['photos' => $photos];
     }
     
     /**

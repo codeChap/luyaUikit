@@ -22,7 +22,7 @@ $photos = $this->extraValue('photos', false);
             <ul class="uk-slider-items uk-child-width-1-1 uk-child-width-1-3@m uk-grid">
                 <?php foreach($photos AS $p) : ?>
                 <li>
-                    <div class="">
+                    <div class="item">
                         <img data-src="<?= $p['source']; ?>" alt="<?= $p['caption']; ?>" uk-img>
                         <?php if( ! empty($p['caption']) ) : ?>
                         <div class="uk-position-center"><h1><?= $p['caption']; ?></h1></div>

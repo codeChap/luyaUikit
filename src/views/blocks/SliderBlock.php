@@ -8,10 +8,7 @@
  * @var \luya\cms\base\PhpBlockView $this
  */
 
-$photos = $this->extraValue('photos', false);
-
-
-//print '<pre>'; print_r($photos); print '</pre>'; die();
+$photos = $this->extraValue('photos', []);
 
 ?>
 

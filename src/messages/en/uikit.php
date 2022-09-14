@@ -29,6 +29,8 @@ return [
     'block_map.lat' => 'Lat',
     'block_map.lng' => 'Lng',
 
+    'block_video.link' => 'Link',
+
     'block_file_list.block_name' => 'Files List',
     'block_file_list.files_label' => 'Files',
     'block_file_list.show_type_label' => 'Display file type',

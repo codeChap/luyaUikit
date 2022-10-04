@@ -80,13 +80,15 @@ class SliderBlock extends PhpBlock
     /**
      * @inheritDoc
      */
-    public function extraVars(array $params = array())
+    public function extraVars(array $params = [])
     {
         // Build up photos
         $photos = [];
-        foreach($this->getVarValue('photos') AS $photo){
-            $photos[] = BlockHelper::imageUpload($photo['image']) ;
-        };
+        if($this->getVarValue('photos')){
+            foreach($this->getVarValue('photos') AS $photo){
+                $photos[] = BlockHelper::imageUpload($photo['image']) ;
+            };
+        }
         return ['photos' => $photos];
     }
     

@@ -22,9 +22,20 @@ return [
     'block_background_image.contain'      => 'Contain',
     'block_background_image.100Width'     => '100% Width',
     'block_background_image.100Height'    => '100% Height',
-    'block_background_image.small'        => 'small',
-    'block_background_image.medium'       => 'medium',
-    'block_background_image.large'        => 'large',
+    'block_background_image.small'        => 'Small',
+    'block_background_image.medium'       => 'Medium',
+    'block_background_image.large'        => 'Large',
+
+    'block_background_image.color'     => 'Text Color',
+    'block_background_image.none'      => 'None',
+    'block_background_image.primary'   => 'Primary',
+    'block_background_image.secondary' => 'Secondary',
+    'block_background_image.muted'     => 'Muted',
+
+    'block_background_image.none'        => 'None',
+    'block_background_image.darkOrLight' => 'Dark / Light',
+    'block_background_image.dark'        => 'Dark',
+    'block_background_image.light'       => 'Light',
 
     'block_map.lat' => 'Lat',
     'block_map.lng' => 'Lng',
@@ -36,8 +47,6 @@ return [
     'block_file_list.show_type_label' => 'Display file type',
     'block_file_list.show_type_icon' => 'Display file type icon',
     'block_file_list.show_file_size' => 'Display file size',
-
-    
 
     'block_image.block_name' => 'Image',
     'block_image.image' => 'Image',

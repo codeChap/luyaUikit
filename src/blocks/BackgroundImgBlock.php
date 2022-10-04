@@ -60,12 +60,29 @@ class BackgroundImgBlock extends PhpBlock
                 ['var' => 'subTitle', 'label' => Module::t('block_background_image.subTitle'), 'type' => self::TYPE_TEXT],
                 ['var' => 'image',    'label' => Module::t('block_background_image.size'),     'type' => self::TYPE_IMAGEUPLOAD, 'options' => ['no_filter' => false]],
                 [
-                    'var' => 'size',     'label' => Module::t('block_background_image.image'), 'type' => self::TYPE_SELECT,
+                    'var' => 'size', 'label' => Module::t('block_background_image.image'), 'type' => self::TYPE_SELECT,
                     'options' => BlockHelper::selectArrayOption([
                         'uk-background-cover'      => Module::t('block_background_image.cover'),
                         'uk-background-contain'    => Module::t('block_background_image.contain'),
                         'uk-background-width-1-1'  => Module::t('block_background_image.100Width'),
                         'uk-background-height-1-1' => Module::t('block_background_image.100Height'),
+                    ])
+                ],
+                [
+                    'var' => 'color', 'label' => Module::t('block_background_image.color'), 'type' => self::TYPE_SELECT,
+                    'options' => BlockHelper::selectArrayOption([
+                        ''      => Module::t('block_background_image.none'),
+                        'uk-text-primary'   => Module::t('block_background_image.primary'),
+                        'uk-text-secondary' => Module::t('block_background_image.secondary'),
+                        'uk-text-muted'     => Module::t('block_background_image.muted'),
+                    ])
+                ],
+                [
+                    'var' => 'darkOrLight', 'label' => Module::t('block_background_image.darkOrLight'), 'type' => self::TYPE_SELECT,
+                    'options' => BlockHelper::selectArrayOption([
+                        ''  => Module::t('block_background_image.none'),
+                        'uk-dark'  => Module::t('block_background_image.dark'),
+                        'uk-light' => Module::t('block_background_image.light'),
                     ])
                 ],
                 [

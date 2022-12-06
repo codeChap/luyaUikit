@@ -48,7 +48,7 @@ class VideoBlock extends PhpBlock
         [
             'vars' => 
             [
-                ['var' => 'link', 'label' => Module::t('block_video.link'),  'type' => self::TYPE_TEXT],
+                ['var' => 'link', 'label' => Module::t('block_video.link'), 'type' => self::TYPE_TEXT],
             ]
         ];
     }

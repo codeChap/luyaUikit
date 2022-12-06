@@ -37,10 +37,14 @@ return [
     'block_background_image.dark'        => 'Dark',
     'block_background_image.light'       => 'Light',
 
-    'block_map.lat' => 'Lat',
-    'block_map.lng' => 'Lng',
+    'block_map.lat'   => 'Lat',
+    'block_map.lng'   => 'Lng',
+    'block_map.zoom'  => 'Zoom',
+    'block_map.color' => 'Icon Hex Color',
+    'block_map.label' => 'Popup Label',
+    'block_map.key'   => 'Google map api Key',
 
-    'block_video.link' => 'Link',
+    'block_video.link' => 'Embed iframe src',
 
     'block_file_list.block_name' => 'Files List',
     'block_file_list.files_label' => 'Files',

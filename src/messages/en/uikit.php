@@ -4,6 +4,26 @@
 
 return [
 
+    // Generic
+    'block_additonal_css_class' => 'Additonal CSS Class',
+
+    // Headings
+    'block_heading.title' => 'Heading',
+    'block_heading.align' => 'Align',
+    'block_heading.size'  => 'Size',
+    'block_heading.tag'   => 'Tag',
+    'block_heading.color' => 'color',
+
+    // Text Editor
+    'block_text_content'   => 'Content',
+    'block_text.align'     => 'Align',
+    'block_text.style'     => 'Style',
+    'block_text.size'      => 'Size',
+    'block_text.weight'    => 'Weight',
+    'block_text.color'     => 'Color',
+    'block_text.transform' => 'Transform',
+
+    // Background Image
     'block_background_image.title'        => 'Title',
     'block_background_image.subTitle'     => 'Sub Title',
     'block_background_image.image'        => 'Image',
@@ -25,18 +45,17 @@ return [
     'block_background_image.small'        => 'Small',
     'block_background_image.medium'       => 'Medium',
     'block_background_image.large'        => 'Large',
-
     'block_background_image.color'     => 'Text Color',
     'block_background_image.none'      => 'None',
     'block_background_image.primary'   => 'Primary',
     'block_background_image.secondary' => 'Secondary',
     'block_background_image.muted'     => 'Muted',
-
     'block_background_image.none'        => 'None',
     'block_background_image.darkOrLight' => 'Dark / Light',
     'block_background_image.dark'        => 'Dark',
     'block_background_image.light'       => 'Light',
 
+    // Map
     'block_map.lat'   => 'Lat',
     'block_map.lng'   => 'Lng',
     'block_map.zoom'  => 'Zoom',
@@ -44,14 +63,17 @@ return [
     'block_map.label' => 'Popup Label',
     'block_map.key'   => 'Google map api Key',
 
+    // Video
     'block_video.link' => 'Embed iframe src',
 
+    // File List
     'block_file_list.block_name' => 'Files List',
     'block_file_list.files_label' => 'Files',
     'block_file_list.show_type_label' => 'Display file type',
     'block_file_list.show_type_icon' => 'Display file type icon',
     'block_file_list.show_file_size' => 'Display file size',
 
+    // Image block
     'block_image.block_name' => 'Image',
     'block_image.image' => 'Image',
     'block_image.align' => 'Image position',

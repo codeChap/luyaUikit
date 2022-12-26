@@ -4,10 +4,12 @@ namespace luya\uikit\blocks;
 use luya\cms\base\PhpBlock;
 use luya\uikit\Module;
 use luya\cms\helpers\BlockHelper;
-use luya\cms\frontend\blockgroups\MediaGroup;
+use luya\uikit\blockgroups\Uikitgroup;
+use luya\uikit\BaseUikitBlock;
 
+//use luya\cms\frontend\blockgroups\MediaGroup;
 
-class GoogleMapBlock extends PhpBlock
+final class GoogleMapBlock extends BaseUikitBlock
 {
     /**
      * @inheritdoc
@@ -19,7 +21,7 @@ class GoogleMapBlock extends PhpBlock
      */
     public function blockGroup()
     {
-        return MediaGroup::class;
+        return UikitGroup::class;
     }
 
     /**

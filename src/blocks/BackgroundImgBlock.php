@@ -4,9 +4,12 @@ namespace luya\uikit\blocks;
 use luya\cms\base\PhpBlock;
 use luya\uikit\Module;
 use luya\cms\helpers\BlockHelper;
-use luya\cms\frontend\blockgroups\MediaGroup;
+use luya\uikit\blockgroups\Uikitgroup;
+use luya\uikit\BaseUikitBlock;
 
-class BackgroundImgBlock extends PhpBlock
+//use luya\cms\frontend\blockgroups\MediaGroup;
+
+final class BackgroundImgBlock extends BaseUikitBlock
 {
     /**
      * @var string The module where this block belongs to in order to find the view files.
@@ -28,7 +31,7 @@ class BackgroundImgBlock extends PhpBlock
      */
     public function blockGroup()
     {
-        return MediaGroup::class;
+        return UikitGroup::class;
     }
 
     /**
@@ -36,7 +39,7 @@ class BackgroundImgBlock extends PhpBlock
      */
     public function name()
     {
-        return 'Backlground Image Block';
+        return 'Background Image Block';
     }
     
     /**

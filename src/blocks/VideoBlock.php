@@ -4,10 +4,14 @@ namespace luya\uikit\blocks;
 use luya\cms\base\PhpBlock;
 use luya\uikit\Module;
 use luya\cms\helpers\BlockHelper;
-use luya\cms\frontend\blockgroups\MediaGroup;
+use luya\uikit\blockgroups\Uikitgroup;
+
+//use luya\cms\frontend\blockgroups\MediaGroup;
+
+use luya\uikit\BaseUikitBlock;
 
 
-class VideoBlock extends PhpBlock
+final class VideoBlock extends BaseUikitBlock
 {
     /**
      * @inheritdoc
@@ -19,7 +23,7 @@ class VideoBlock extends PhpBlock
      */
     public function blockGroup()
     {
-        return MediaGroup::class;
+        return UikitGroup::class;
     }
 
     /**
@@ -35,7 +39,7 @@ class VideoBlock extends PhpBlock
      */
     public function icon()
     {
-        return 'video';
+        return 'videocam';
     }
 
  

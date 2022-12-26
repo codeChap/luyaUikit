@@ -4,9 +4,12 @@ namespace luya\uikit\blocks;
 use luya\cms\base\PhpBlock;
 use luya\uikit\Module;
 use luya\cms\helpers\BlockHelper;
-use luya\cms\frontend\blockgroups\MediaGroup;
+use luya\uikit\blockgroups\Uikitgroup;
+use luya\uikit\BaseUikitBlock;
 
-class SliderBlock extends PhpBlock
+//use luya\cms\frontend\blockgroups\MediaGroup;
+
+final class SliderBlock extends BaseUikitBlock
 {
     /**
      * @var string The module where this block belongs to in order to find the view files.
@@ -28,7 +31,7 @@ class SliderBlock extends PhpBlock
      */
     public function blockGroup()
     {
-        return MediaGroup::class;
+        return UikitGroup::class;
     }
 
     /**

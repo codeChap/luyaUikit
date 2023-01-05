@@ -39,7 +39,7 @@ final class ImgBlock extends BaseUikitBlock
      */
     public function name()
     {
-        return 'Image Block';
+        return 'Image';
     }
     
     /**
@@ -78,6 +78,7 @@ final class ImgBlock extends BaseUikitBlock
                 ['var' => 'showCaption', 'label' => Module::t('block_image.show_caption'), 'type' => self::TYPE_CHECKBOX],
             ],
             'cfgs' => [
+                ['var' => 'divCssClass', 'label' => Module::t('block_additonal_css_class'), 'type' => self::TYPE_TEXT],
                 ['var' => 'lazyload', 'label' => Module::t('block_image.lazyload'), 'type' => self::TYPE_CHECKBOX]
             ]
         ];

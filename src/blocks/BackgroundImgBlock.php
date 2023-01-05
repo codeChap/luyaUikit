@@ -60,7 +60,18 @@ final class BackgroundImgBlock extends BaseUikitBlock
             'vars' => 
             [
                 ['var' => 'title',    'label' => Module::t('block_background_image.title'),    'type' => self::TYPE_TEXT],
-                ['var' => 'subTitle', 'label' => Module::t('block_background_image.subTitle'), 'type' => self::TYPE_TEXT],
+                [
+                    'var' => 'titleSize', 'label' => Module::t('block_background_image.title_size'), 'type' => self::TYPE_SELECT,
+                    'options' => BlockHelper::selectArrayOption([
+                        'uk-heading-small'   => Module::t('block_background_image.title_size_small'),
+                        'uk-heading-medium'  => Module::t('block_background_image.title_size_medium'),
+                        'uk-heading-large'   => Module::t('block_background_image.title_size_large'),
+                        'uk-heading-xlarge'  => Module::t('block_background_image.title_size_xlarge'),
+                        'uk-heading-2xlarge' => Module::t('block_background_image.title_size_2xlarge')
+                    ])
+                ],
+                ['var' => 'subTitle', 'label' => Module::t('block_background_image.subTitle'), 'type' => self::TYPE_TEXTAREA],
+                
                 ['var' => 'image',    'label' => Module::t('block_background_image.size'),     'type' => self::TYPE_IMAGEUPLOAD, 'options' => ['no_filter' => false]],
                 [
                     'var' => 'size', 'label' => Module::t('block_background_image.image'), 'type' => self::TYPE_SELECT,

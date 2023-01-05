@@ -19,14 +19,17 @@ $height      = $this->varValue('height', 'medium');
 $color       = $this->varValue('color', false);
 $darkOrLight = $this->varValue('darkOrLight', false);
 $image       = $this->extraValue('image', false);
-$href     = '';
+
+$titleSize = $this->varValue('titleSize', 'uk-heading-medium');
 
 ?>
 <?php if ($image) : ?>
-<div class="<?= $height; ?> <?= $darkOrLight; ?> uk-flex uk-flex-center uk-flex-middle" style="background: no-repeat center bottom / cover;" data-src="<?= $image->source ?>" uk-img>
-    <div class="uk-text-center">
-        <h4 class="<?= $color; ?> uk-h2 uk-text-bold"><?= $title; ?></h4>
-        <div class="<?= $color; ?>"><?= $subtitle; ?></div>
+    <div class="backgroundImgBlock <?= $height; ?> <?= $darkOrLight; ?> uk-flex" style="background: no-repeat center bottom / cover;" data-src="<?= $image->source ?>" uk-img>
+        <div style="background-color:rgba(50,50,50,0.6); width:100%; height:inherit; z-index:0;" class="<?= $height; ?> uk-flex uk-flex-center uk-flex-middle">
+            <div class="uk-text-center">
+                <p class="<?= $color; ?> <?= $titleSize; ?>"><?= $title; ?></p>
+                <div class="<?= $color; ?> uk-text-large"><?= nl2br($subtitle); ?></div>
+            </div>
+        </div>
     </div>
-</div>
 <?php endif; ?>

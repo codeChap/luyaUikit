@@ -31,7 +31,7 @@ final class VideoBlock extends BaseUikitBlock
      */
     public function name()
     {
-        return 'Video';
+        return 'External Video';
     }
 
     /**

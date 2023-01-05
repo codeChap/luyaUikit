@@ -72,6 +72,20 @@ final class HeadingBlock extends BaseUikitBlock
                     'uk-heading-2xlarge' => '2x Large'
                     ])
                 ],
+                ['var' => 'weight',  'label' => Module::t('block_heading.weight'),  'type' => self::TYPE_SELECT, 'options' => BlockHelper::selectArrayOption([
+                    'uk-text-light'   => 'Light',
+                    'uk-text-normal'  => 'Normal',
+                    'uk-text-bold'    => 'Bold',
+                    'uk-text-lighter' => 'Lighter',
+                    'uk-text-bolder'  => 'Bolder'
+                    ])
+                ],
+                ['var' => 'transform', 'label' => Module::t('block_button.transform'),  'type' => self::TYPE_SELECT, 'options' => BlockHelper::selectArrayOption([
+                    'uk-text-capitalize' => 'Capitalize',
+                    'uk-text-uppercase'  => 'Uppercase',
+                    'uk-text-lowercase'  => 'Lowercase',
+                    ])
+                ],
                 ['var' => 'tag', 'label' => Module::t('block_heading.tag'),  'type' => self::TYPE_SELECT, 'options' => BlockHelper::selectArrayOption([
                     '1' => 'h1',
                     '2' => 'h2',
@@ -122,6 +136,10 @@ final class HeadingBlock extends BaseUikitBlock
          {% if vars.color == "uk-text-success" %}color:rgb(50, 210, 150){% endif %}
          {% if vars.color == "uk-text-warning" %}color:rgb(250, 160, 90){% endif %}
          {% if vars.color == "uk-text-danger" %}color:rgb(240, 80, 110){% endif %}
+
+         {% if vars.transform == "uk-text-capitalize" %}text-transform: capitalize;{% endif %}
+         {% if vars.transform == "uk-text-uppercase" %}text-transform: uppercase;{% endif %}
+         {% if vars.transform == "uk-text-lowercase" %}text-transform: lowercase;{% endif %}
          ">
             {{vars.title}}
         </div>';

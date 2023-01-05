@@ -15,11 +15,11 @@ $align   = $this->varValue('align', 'left');
 $width   = $this->varValue('width', '');
 $image   = $this->extraValue('image', false);
 $caption = ($image AND !empty($image->caption)) ? $image->caption : '';
-
+$class   = $this->cfgValue('divCssClass', false);
 ?>
 
 <?php if ($image) : ?>
-    <figure class="<?php if ($align === 'left'): ?>uk-text-left<?php elseif ($align === 'right'): ?>uk-text-right<?php else: ?>uk-text-center<?php endif; ?>">
+    <figure class="<?= $class ?? ''; ?> <?php if ($align === 'left'): ?>uk-text-left<?php elseif ($align === 'right'): ?>uk-text-right<?php else: ?>uk-text-center<?php endif; ?>">
 
         <!-- Image -->
         <?php if($this->cfgValue('lazyload', false)): ?>

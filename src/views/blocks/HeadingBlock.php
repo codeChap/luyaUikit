@@ -12,16 +12,19 @@
  * @var $this \luya\uikit\BaseUikitBlock;
  */
 
+ // Get variables
 $title = $this->varValue('title', false);
-$align = $this->varValue('align', false);
-$size  = $this->varValue('size', 'uk-heading-large');
 $tag   = $this->varValue('tag', 1);
-$color = $this->varValue('color', false);
-
-$class = $this->cfgValue('divCssClass', false);
 
 // Combine classes
-$finalClasses = array_filter([$align, $size, $color, $class]);
+$finalClasses = array_filter([
+    $this->varValue('align', false),
+    $this->varValue('size', 'uk-heading-large'),
+    $this->varValue('weight', false),
+    $this->varValue('transform', false),
+    $this->varValue('color', false),
+    $this->cfgValue('divCssClass', false)
+]);
 
 ?>
 

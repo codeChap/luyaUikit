@@ -38,7 +38,7 @@ final class Flex2Block extends BaseUikitBlock
     {
         return [
             'vars' => [
-                ['var' => 'container', 'label' => 'Container Size', 'initvalue' => 1, 'type' => self::TYPE_SELECT, 'options' => BlockHelper::selectArrayOption([
+                ['var' => 'container', 'label' => 'Container Size', 'initvalue' => 'uk-container', 'type' => self::TYPE_SELECT, 'options' => BlockHelper::selectArrayOption([
                     'uk-container'        => 'Default',
                     'uk-container-xsmall' => 'X - Small',
                     'uk-container-small'  => 'Small',
@@ -47,40 +47,56 @@ final class Flex2Block extends BaseUikitBlock
                     'uk-container-expand' => 'Expand'
                 ])
                 ],
-                ['var' => 'width_left', 'label' => 'Left Width', 'initvalue' => 1, 'type' => self::TYPE_SELECT, 'options' => BlockHelper::selectArrayOption([
-                        '1-2' => '1 / 2',
-                        '1-3' => '1 / 3',
-                        '2-3' => '2 / 3',
-                        '1-4' => '1 / 4',
-                        '2-4' => '2 / 4',
-                        '3-4' => '3 / 4',
-                        '1-5' => '1 / 5',
-                        '2-5' => '2 / 5',
-                        '3-5' => '3 / 5',
-                        '4-5' => '4 / 5',
-                        '1-6' => '1 / 6'
-                    ]),
+                ['var' => 'width_left', 'label' => 'Left Width', 'initvalue' => '1-2', 'type' => self::TYPE_SELECT, 'options' => BlockHelper::selectArrayOption([
+                    '1-2' => '1 / 2',
+                    '1-3' => '1 / 3',
+                    '2-3' => '2 / 3',
+                    '1-4' => '1 / 4',
+                    '2-4' => '2 / 4',
+                    '3-4' => '3 / 4',
+                    '1-5' => '1 / 5',
+                    '2-5' => '2 / 5',
+                    '3-5' => '3 / 5',
+                    '4-5' => '4 / 5',
+                    '1-6' => '1 / 6'
+                ]),
                 ],
-                ['var' => 'width_right', 'label' => 'Right Width', 'initvalue' => 1, 'type' => self::TYPE_SELECT, 'options' => BlockHelper::selectArrayOption([
-                        '1-2' => '1 / 2',
-                        '1-3' => '1 / 3',
-                        '2-3' => '2 / 3',
-                        '1-4' => '1 / 4',
-                        '2-4' => '2 / 4',
-                        '3-4' => '3 / 4',
-                        '1-5' => '1 / 5',
-                        '2-5' => '2 / 5',
-                        '3-5' => '3 / 5',
-                        '4-5' => '4 / 5',
-                        '1-6' => '1 / 6'
-                    ]),
+                ['var' => 'width_right', 'label' => 'Right Width', 'initvalue' => '1-2', 'type' => self::TYPE_SELECT, 'options' => BlockHelper::selectArrayOption([
+                    '1-2' => '1 / 2',
+                    '1-3' => '1 / 3',
+                    '2-3' => '2 / 3',
+                    '1-4' => '1 / 4',
+                    '2-4' => '2 / 4',
+                    '3-4' => '3 / 4',
+                    '1-5' => '1 / 5',
+                    '2-5' => '2 / 5',
+                    '3-5' => '3 / 5',
+                    '4-5' => '4 / 5',
+                    '1-6' => '1 / 6'
+                ]),
                 ],
-                ['var' => 'v_align', 'label' => 'Vertical alignment', 'initvalue' => 1, 'type' => self::TYPE_SELECT, 'options' => BlockHelper::selectArrayOption([
-                        'uk-flex-stretch' => 'Stretch',
-                        'uk-flex-top'     => 'Top',
-                        'uk-flex-middle'  => 'Middle',
-                        'uk-flex-bottom'  => 'Bottom'
-                    ])
+                ['var' => 'marginTop', 'label' => 'Top Margin', 'initvalue' => false, 'type' => self::TYPE_SELECT, 'options' => BlockHelper::selectArrayOption([
+                    'uk-margin-top'        => 'Default',
+                    'uk-margin-small-top'  => 'Small',
+                    'uk-margin-large-top'  => 'Medium',
+                    'uk-margin-large-top'  => 'Large',
+                    'uk-margin-xlarge-top' => 'xLarge'
+                ])
+                ],
+                ['var' => 'marginBottom', 'label' => 'Bottom Margin', 'initvalue' => false, 'type' => self::TYPE_SELECT, 'options' => BlockHelper::selectArrayOption([
+                    'uk-margin-bottom'        => 'Default',
+                    'uk-margin-small-bottom'  => 'Small',
+                    'uk-margin-large-bottom'  => 'Medium',
+                    'uk-margin-large-bottom'  => 'Large',
+                    'uk-margin-xlarge-bottom' => 'xLarge'
+                ])
+                ],
+                ['var' => 'v_align', 'label' => 'Vertical alignment', 'initvalue' => 'uk-flex-top', 'type' => self::TYPE_SELECT, 'options' => BlockHelper::selectArrayOption([
+                    'uk-flex-top'     => 'Top (Default)',
+                    'uk-flex-stretch' => 'Stretch',
+                    'uk-flex-middle'  => 'Middle',
+                    'uk-flex-bottom'  => 'Bottom'
+                ])
                 ]
             ],
             'cfgs' => [

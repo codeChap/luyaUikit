@@ -16,9 +16,10 @@ $rightColumnClasses = implode(' ', array_filter([
 
 // Build classes
 $finalClasses = implode(' ', array_unique(array_filter([
-    $this->varValue('v_align', false) ?? 'uk-flex-top',
-    $this->varValue('container', false) ? 'uk-container' : false,
-    $this->varValue('container', false) ?? false,
+    $this->varValue('v_align', false),
+    $this->varValue('container', false),
+    $this->varValue('marginTop', false),
+    $this->varValue('marginBottom', false)
 ])));
 
 ?>

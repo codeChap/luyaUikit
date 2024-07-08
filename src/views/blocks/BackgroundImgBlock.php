@@ -44,7 +44,6 @@ if($fixed){
 
 ?>
 <?php if ($image) : ?>
-
     <?php ob_start(); ?>
     <p class="<?= $color; ?> <?= $titleSize; ?> <?= $darkOrLight; ?> "><?= $title; ?></p>
     <div class="<?= $color; ?> <?= $darkOrLight; ?> uk-text-large uk-padding-small"><?= $subtitle; ?></div>

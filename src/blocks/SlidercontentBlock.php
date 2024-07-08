@@ -58,11 +58,8 @@ final class SlidercontentBlock extends BaseUikitBlock
         return 
         [
             'vars' => [
-                ['var' => 'background_color', 'label' => Module::t('Background Color'), 'type' => self::TYPE_SELECT, 'options' => BlockHelper::selectArrayOption([
-                        'uk-background-primary'   => 'Primary',
-                        'uk-background-secondary' => 'Secondary',
-                        'uk-background-muted'     => 'Muted',
-                    ])
+                [
+                    'var' => 'backgroundColor', 'label' => 'Background Color',  'type' => self::TYPE_COLOR
                 ],
                 ['var' => 'dark_light', 'label' => Module::t('Dark / Light'), 'type' => self::TYPE_SELECT, 'options' => BlockHelper::selectArrayOption([
                         'uk-light'   => 'Light',
@@ -99,7 +96,7 @@ final class SlidercontentBlock extends BaseUikitBlock
     public function getFieldHelp()
     {
         return [
-            'content' => 'Image Slider',
+            'content' => 'Slider',
         ];
     }
 }

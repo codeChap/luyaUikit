@@ -39,7 +39,7 @@ final class SliderBlock extends BaseUikitBlock
      */
     public function name()
     {
-        return 'Slider Block';
+        return 'Slider Image Block';
     }
     
     /**
@@ -59,6 +59,60 @@ final class SliderBlock extends BaseUikitBlock
         [
             'vars' =>
             [
+                [
+                    'var' => 'margin', 'label' => 'Margin', 'type' => self::TYPE_SELECT, 'options' => BlockHelper::selectArrayOption(
+                        [
+                            'uk-margin-small'  => 'Small',
+                            'uk-margin-medium' => 'Medium',
+                            'uk-margin-large'  => 'Large',
+                            'uk-margin-xlarge' => 'X-Large'
+                        ]
+                    )
+                ],
+                [
+                    'var' => 'width', 'label' => 'Item width', 'type' => self::TYPE_SELECT, 'options' => BlockHelper::selectArrayOption(
+                        [
+                            '1-2' => '1 / 2',
+                            '1-3' => '1 / 3',
+                            '2-3' => '2 / 3',
+                            '1-4' => '1 / 4',
+                            '2-4' => '2 / 4',
+                            '3-4' => '3 / 4',
+                            '1-5' => '1 / 5',
+                            '2-5' => '2 / 5',
+                            '3-5' => '3 / 5',
+                            '4-5' => '4 / 5',
+                            '1-6' => '1 / 6'
+                        ]
+                    )
+                ],
+                [
+                    'var' => 'align', 'label' => 'Item alignment', 'type' => self::TYPE_SELECT, 'options' => BlockHelper::selectArrayOption(
+                        [
+                            'uk-text-left'   => 'Left',
+                            'uk-text-center' => 'Center',
+                            'uk-text-right'  => 'Right'
+                        ]
+                    )
+                ],
+                [
+                    'var' => 'nav', 'label' => 'Nav', 'type' => self::TYPE_SELECT, 'options' => BlockHelper::selectArrayOption(
+                        [
+                            'out' => 'Out (Default)',
+                            'in'  => 'In',
+                        ]
+                    )
+                ],
+                [
+                    'var' => 'valign', 'label' => 'Vertical alignment', 'type' => self::TYPE_SELECT, 'options' => BlockHelper::selectArrayOption(
+                        [
+                            'uk-flex-stretch' => 'Streach',
+                            'uk-flex-top'     => 'Top',
+                            'uk-flex-middle'  => 'Middle',
+                            'uk-flex-bottom'  => 'Bottom'
+                        ]
+                    )
+                ],
                 [
                     'var' => 'photos', 'label' => 'Photos', 'type' => self::TYPE_MULTIPLE_INPUTS, 
                     'options' =>

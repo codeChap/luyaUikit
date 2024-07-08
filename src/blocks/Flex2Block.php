@@ -83,9 +83,10 @@ final class Flex2Block extends BaseUikitBlock
                     '4-5' => '4 / 5',
                     '1-6' => '1 / 6'
                 ]),
+
                 ],
                 ['var' => 'marginTop', 'label' => 'Top Margin', 'initvalue' => false, 'type' => self::TYPE_SELECT, 'options' => BlockHelper::selectArrayOption([
-                    'uk-margin-top'        => 'Default',
+                    'uk-margin-top'        => 'Default margin',
                     'uk-margin-small-top'  => 'Small',
                     'uk-margin-large-top'  => 'Medium',
                     'uk-margin-large-top'  => 'Large',
@@ -93,11 +94,27 @@ final class Flex2Block extends BaseUikitBlock
                 ])
                 ],
                 ['var' => 'marginBottom', 'label' => 'Bottom Margin', 'initvalue' => false, 'type' => self::TYPE_SELECT, 'options' => BlockHelper::selectArrayOption([
-                    'uk-margin-bottom'        => 'Default',
+                    'uk-margin-bottom'        => 'Default margin',
                     'uk-margin-small-bottom'  => 'Small',
                     'uk-margin-large-bottom'  => 'Medium',
                     'uk-margin-large-bottom'  => 'Large',
                     'uk-margin-xlarge-bottom' => 'xLarge'
+                ])
+                ],
+                ['var' => 'marginLeft', 'label' => 'Left Margin', 'initvalue' => false, 'type' => self::TYPE_SELECT, 'options' => BlockHelper::selectArrayOption([
+                    'uk-margin-left'        => 'Default margin',
+                    'uk-margin-small-left'  => 'Small',
+                    'uk-margin-large-left'  => 'Medium',
+                    'uk-margin-large-left'  => 'Large',
+                    'uk-margin-xlarge-left' => 'xLarge'
+                ])
+                ],
+                ['var' => 'marginRight', 'label' => 'Right Margin', 'initvalue' => false, 'type' => self::TYPE_SELECT, 'options' => BlockHelper::selectArrayOption([
+                    'uk-margin-bottom'       => 'Default margin',
+                    'uk-margin-small-right'  => 'Small',
+                    'uk-margin-large-right'  => 'Medium',
+                    'uk-margin-large-right'  => 'Large',
+                    'uk-margin-xlarge-right' => 'xLarge'
                 ])
                 ],
                 ['var' => 'v_align', 'label' => 'Vertical alignment', 'initvalue' => 'uk-flex-top', 'type' => self::TYPE_SELECT, 'options' => BlockHelper::selectArrayOption([
@@ -109,7 +126,25 @@ final class Flex2Block extends BaseUikitBlock
                 ],
                 [
                     'var' => 'background_image_left', 'label' => 'Background Image Left', 'type' => self::TYPE_IMAGEUPLOAD, 'options' => ['no_filter' => false],
-                ]
+                ],
+                [
+                    'var' => 'background_image_right', 'label' => 'Background Image Right', 'type' => self::TYPE_IMAGEUPLOAD, 'options' => ['no_filter' => false],
+                ],
+                [
+                    'var' => 'background_image_right_position', 'label' => 'Background Image Right Position', 'type' => self::TYPE_SELECT, 'options' => BlockHelper::selectArrayOption([
+                        'topLeft'      => Module::t('block_background_image.topLeft'),
+                        'topCenter'    => Module::t('block_background_image.topCenter'),
+                        'topRight'     => Module::t('block_background_image.topRight'),
+                        'centerLeft'   => Module::t('block_background_image.centerLeft'),
+                        'centerRight'  => Module::t('block_background_image.centerRight'),
+                        'bottomLeft'   => Module::t('block_background_image.bottomLeft'),
+                        'bottomCenter' => Module::t('block_background_image.bottomCenter'),
+                        'bottomRight'  => Module::t('block_background_image.bottomRight'),
+                    ]),
+                ],
+                [
+                    'var' => 'backgroundColor', 'label' => 'Background Color', 'initvalue' => '', 'type' => self::TYPE_COLOR
+                ],
             ],
             'cfgs' => [
                 ['var' => 'leftColumnClassesBlock',  'label' => Module::t('block_layout_left_column_css_class'), 'type'  => self::TYPE_TEXT],
@@ -133,7 +168,8 @@ final class Flex2Block extends BaseUikitBlock
         return [
             'leftWidth'  => 6,
             'rightWidth' => 6,
-            'background_image_left' => BlockHelper::imageUpload($this->getVarValue('background_image_left'), false, true)
+            'background_image_left' => BlockHelper::imageUpload($this->getVarValue('background_image_left'), false, true),
+            'background_image_right' => BlockHelper::imageUpload($this->getVarValue('background_image_right'), false, true)
         ];
     }
 

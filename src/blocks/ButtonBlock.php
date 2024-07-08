@@ -96,6 +96,8 @@ final class ButtonBlock extends BaseUikitBlock
                     'uk-text-lowercase'  => 'Lowercase',
                     ])
                 ],
+                ['var' => 'rounded', 'label' => 'Rounded', 'initvalue' => false, 'type' => self::TYPE_CHECKBOX],
+                ['var' => 'chevron', 'label' => 'Chevron', 'initvalue' => false, 'type' => self::TYPE_CHECKBOX],
             ],
             'cfgs' => [
                 ['var' => 'divCssClass', 'label' => Module::t('block_additonal_css_class'), 'type' => self::TYPE_TEXT],

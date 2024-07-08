@@ -12,7 +12,7 @@ $slides = array_filter([
 
 $height = $this->cfgValue('height', false) ? 'min-height:'.$this->cfgValue('height').'; max-height:' . $this->cfgValue('height', false).';' : false;
 
-$backgroundColor = $this->varValue('background_color', false) ?? 'uk-background-default';
+$backgroundColor = $this->varValue('backgroundColor', false) ?? '';
 
 $classes = implode(' ', array_filter([
     $this->varValue('dark_light', false) ?? false,
@@ -21,12 +21,12 @@ $classes = implode(' ', array_filter([
 
 ?>
 
-<div uk-slideshow="animation: slide;<?= $height; ?>">
-    <div class="uk-position-relative uk-visible-toggle <?= $backgroundColor; ?> <?= $classes; ?>" tabindex="-1">
+<div class="slider-content-block" uk-slideshow="animation: slide;<?= $height; ?>">
+    <div class="uk-position-relative uk-visible-toggle <?= $classes; ?>" tabindex="-1" style="background-color:<?=$backgroundColor; ?>">
         <ul class="uk-slideshow-items">
-            <?php foreach($slides AS $slde) : ?>
-            <li class="uk-padding">
-                <?= $slde; ?>
+            <?php foreach($slides AS $slide) : ?>
+            <li class="uk-padding uk-width-1-1">
+                <?= $slide; ?>
             </li>
             <?php endforeach; ?>
         </ul>

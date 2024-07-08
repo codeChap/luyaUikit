@@ -69,9 +69,23 @@ final class BackgroundvideoBlock extends BaseUikitBlock
                 ['var' => 'heading',    'label' => Module::t('block_backgroundvideo.heading'), 'type' => self::TYPE_TEXT],
                 ['var' => 'subHeading', 'label' => Module::t('block_backgroundvideo.subheading'), 'type' => self::TYPE_TEXT],
                 ['var' => 'linkLabel',  'label' => Module::t('block_backgroundvideo.linkLabel'), 'type' => self::TYPE_TEXT],
+                ['var' => 'height', 'label' => 'Height', 'type' => self::TYPE_SELECT, 'options' => BlockHelper::selectArrayOption(
+                    [
+                        '100' => '100% (Default)',
+                        '20'  => '20%',
+                        '30'  => '30%',
+                        '40'  => '40%',
+                        '50'  => '50%',
+                        '60'  => '60%',
+                        '70'  => '70%',
+                        '80'  => '80%',
+                        '90'  => '90%',
+                    ])
+                ]
             ],
             'cfgs' => 
             [
+                ['var' => 'hideLink',     'label' => Module::t('block_backgroundvideo.hideLink'),     'type' => self::TYPE_CHECKBOX],
                 ['var' => 'hideOnMobile', 'label' => Module::t('block_backgroundvideo.hideOnMobile'), 'type' => self::TYPE_CHECKBOX],
                 ['var' => 'dontLoadVid',  'label' => Module::t('block_backgroundvideo.dontLoadVid'),  'type' => self::TYPE_CHECKBOX],
                 ['var' => 'imageId',      'label' => Module::t('block_background_image.image'),       'type' => self::TYPE_IMAGEUPLOAD, 'options' => ['no_filter' => false]],

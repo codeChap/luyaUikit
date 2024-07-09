@@ -61,21 +61,6 @@ final class BackgroundImgBlock extends BaseUikitBlock
         [
             'vars' => 
             [
-                [
-                    'var' => 'title',    'label' => Module::t('block_background_image.title'),    'type' => self::TYPE_TEXT],
-                [
-                    'var' => 'titleSize', 'label' => Module::t('block_background_image.title_size'), 'type' => self::TYPE_SELECT,
-                    'options' => BlockHelper::selectArrayOption([
-                        'uk-heading-small'   => Module::t('size_small'),
-                        'uk-heading-medium'  => Module::t('size_medium'),
-                        'uk-heading-large'   => Module::t('size_large'),
-                        'uk-heading-xlarge'  => Module::t('size_xlarge'),
-                        'uk-heading-2xlarge' => Module::t('size_2xlarge')
-                    ])
-                ],
-                ['var' => 'subTitle', 'label' => Module::t('block_background_image.subTitle'), 'type' => self::TYPE_WYSIWYG],
-
-                
                 ['var' => 'image',    'label' => Module::t('block_background_image.image'),     'type' => self::TYPE_IMAGEUPLOAD, 'options' => ['no_filter' => false]],
                 [
                     'var' => 'size', 'label' => Module::t('background_size'), 'type' => self::TYPE_SELECT,
@@ -85,30 +70,16 @@ final class BackgroundImgBlock extends BaseUikitBlock
                     ])
                 ],
                 [
-                    'var' => 'color', 'label' => Module::t('block_background_image.color'), 'type' => self::TYPE_SELECT,
-                    'options' => BlockHelper::selectArrayOption([
-                        '' => Module::t('block_background_image.none'),
-                        'uk-text-primary'   => Module::t('block_background_image.primary'),
-                        'uk-text-secondary' => Module::t('block_background_image.secondary'),
-                        'uk-text-muted'     => Module::t('block_background_image.muted'),
-                    ])
-                ],
-                [
-                    'var' => 'darkOrLight', 'label' => Module::t('block_background_image.darkOrLight'), 'type' => self::TYPE_SELECT,
-                    'options' => BlockHelper::selectArrayOption([
-                        ''  => Module::t('block_background_image.none'),
-                        'uk-dark'  => Module::t('block_background_image.light'),
-                        'uk-light' => Module::t('block_background_image.dark'),
-                    ])
-                ],
-                [
                     'var' => 'backPosition', 'label' => Module::t('block_background_image.position'), 'type' => self::TYPE_SELECT,
                     'options' => BlockHelper::selectArrayOption([
-                        'top'    => Module::t('block_background_image.top'),
-                        'bottom' => Module::t('block_background_image.bottom'),
-                        'left'   => Module::t('block_background_image.left'),
-                        'right'  => Module::t('block_background_image.right'),
-                        'center' => Module::t('block_background_image.center'),
+                        'topLeft'      => Module::t('block_background_image.topLeft'),
+                        'topCenter'    => Module::t('block_background_image.topCenter'),
+                        'topRight'     => Module::t('block_background_image.topRight'),
+                        'centerLeft'   => Module::t('block_background_image.centerLeft'),
+                        'centerRight'  => Module::t('block_background_image.centerRight'),
+                        'bottomLeft'   => Module::t('block_background_image.bottomLeft'),
+                        'bottomCenter' => Module::t('block_background_image.bottomCenter'),
+                        'bottomRight'  => Module::t('block_background_image.bottomRight'),
                     ])
                 ],
                 [
@@ -117,6 +88,7 @@ final class BackgroundImgBlock extends BaseUikitBlock
                         'uk-height-small'  => Module::t('block_background_image.small'),
                         'uk-height-medium' => Module::t('block_background_image.medium'),
                         'uk-height-large'  => Module::t('block_background_image.large'),
+                        'vp'               => 'View Port',
                     ])
                 ],
                 [
@@ -136,13 +108,14 @@ final class BackgroundImgBlock extends BaseUikitBlock
                 ],
                 [
                     'var' => 'fixed', 'label' => 'Fixed background attachment', 'type' => self::TYPE_CHECKBOX
+                ],
+                [
+                    'var' => 'darken', 'label' => 'Darken Image', 'type' => self::TYPE_CHECKBOX
                 ]
             ],
             'cfgs' => 
             [
-                [
-                    'var' => 'darken', 'label' => 'Darken Image', 'type' => self::TYPE_CHECKBOX
-                ]
+
             ],
             'placeholders' => 
             [

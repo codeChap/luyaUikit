@@ -14,21 +14,15 @@ use yii\helpers\Html;
  * @var $this \luya\cms\base\PhpBlockView
  */
 
-$title        = $this->varValue('title', '');
-$subtitle     = $this->varValue('subTitle', '');
 $size         = $this->varValue('size', 'cover');
 $backPosition = $this->varValue('backPosition', 'center');
 $height       = $this->varValue('height', 'medium');
-$color        = $this->varValue('color', false);
-$darkOrLight  = $this->varValue('darkOrLight', false);
 $fixed        = $this->varValue('fixed', false);
 $padding      = $this->varValue('padding', false);
 $image        = $this->extraValue('image', false);
-$linkLabel    = $this->varValue('linkLabel', 'Find out more');
-$placement    = $this->varValue('placement', 'center');
-$darken       = $this->cfgValue('darken', false);
 
-$titleSize = $this->varValue('titleSize', 'uk-heading-medium');
+$placement    = $this->varValue('placement', 'center');
+$darken       = $this->varValue('darken', false);
 
 if($darken){
     $darken = 'background-color:rgba(50,50,50,0.6)';
@@ -42,22 +36,20 @@ if($fixed){
     $fixed = '';
 }
 
+$heightStyle = false;
+if($height == 'vp'){
+    $height = false;
+    $heightStyle = 'height:100vh;';
+}
+
+// Break up camelCase word
+$backPosition = strtolower(preg_replace('/(?<!^)[A-Z]/', ' $0', $backPosition));
+
 ?>
 <?php if ($image) : ?>
-    <?php ob_start(); ?>
-    <p class="<?= $color; ?> <?= $titleSize; ?> <?= $darkOrLight; ?> "><?= $title; ?></p>
-    <div class="<?= $color; ?> <?= $darkOrLight; ?> uk-text-large uk-padding-small"><?= $subtitle; ?></div>
-    <?php if($this->extraValue('linkData')) : ?>
-    <?= Html::a($linkLabel, $this->extraValue('linkData') ? $this->extraValue('linkData')->getHref() : '/', [
-        'class'  => 'uk-button uk-button-large uk-button-primary uk-width-1-3',
-        'target' => $this->extraValue('linkData')? $this->extraValue('linkData')->getTarget() : false,
-    ]); ?>
-    <?php endif; ?>
-    <?php $content = ob_get_clean(); ?>
-
-    <div class="backgroundImgBlock <?= $height; ?> <?= $padding; ?> uk-padding-remove-horizontal" style="background: no-repeat <?= $backPosition; ?> / <?= $size; ?> <?= $fixed; ?>;" data-src="<?= $image->source ?>" uk-img>
+    <div class="backgroundImgBlock <?= $height; ?> <?= $padding; ?> uk-padding-remove-horizontal" style="background: no-repeat <?= $backPosition; ?> / <?= $size; ?> <?= $fixed; ?>; <?= $heightStyle; ?>" data-src="<?= $image->source ?>" uk-img>
         <div style="<?= $darken; ?> height:inherit; z-index:0;" class="uk-flex uk-flex-wrap uk-flex-middle uk-flex-center uk-width-1-1">
-            <div width="" style="width:inherit;">
+            <div style="width:inherit;">
                 <?= $this->placeholderValue('content'); ?>
             </div>
         </div>
